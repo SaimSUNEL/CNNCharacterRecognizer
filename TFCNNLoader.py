@@ -135,7 +135,7 @@ while tus != 27:
 
         for image in bulunan_karakter:
 
-          if image == "blank":
+          if image is None:
               son_result += "\n"
               continue
           temp = []
@@ -151,6 +151,8 @@ while tus != 27:
                       temp.append(0)
 
           res = session.run(f2_output,feed_dict={x: [np.array(temp[1:],dtype=np.float32).reshape(28,28,1) ]} )
+
+          
           print "Result", res
           #res = session.run(f2_output,feed_dict={x:  [temp[1:]] } )
 
@@ -236,7 +238,7 @@ while tus != 27:
                 previous_character_count += 1
 
             rakam += 1
-            bulunan_karakter.append ( "blank" )
+            bulunan_karakter.append ( None )
             print "Satir ", rakam, " : ", satir
             imshow("Follow", follow_image)
 
