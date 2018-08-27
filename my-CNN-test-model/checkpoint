@@ -1,0 +1,2 @@
+model_checkpoint_path: "my-CNN-test-model"
+all_model_checkpoint_paths: "my-CNN-test-model"
